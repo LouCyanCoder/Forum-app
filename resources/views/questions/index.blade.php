@@ -5,6 +5,11 @@
 <section id="banner">
     <div class="container">
         <h1>Questions</h1>
+
+        <a href="/questions/create">
+            <button class="btn btn-success">Post a new question</button>
+        </a>
+        
     </div>
 </section>
 
@@ -30,6 +35,8 @@
         </div>
             
         @endforeach
+
+
     </div>
 </section>
 

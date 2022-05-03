@@ -20,5 +20,8 @@ Route::get('/', function () {
 
 Route::controller(QuestionController::class)->group(function () {
     Route::get('/questions', 'index');
+    Route::get('/questions/create', 'create');
+    Route::post('/questions', 'store');
     Route::get('/questions/{question_id}', 'show');
+    Route::put('/questions/{question_id}', 'edit');
 });
