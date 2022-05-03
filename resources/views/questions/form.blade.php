@@ -3,17 +3,19 @@
 @section('content')
     
     @if ($question->id)
-        
-        <h1>Edit question</h1>
+        <div class="form-banner">
+            <h1>Edit question</h1>
+            
 
-        <form action="questions/{{ $question->id }}" method="post">
-            @method('PUT')
+            <form action="questions/{{ $question->id }}" method="post">
+                @method('PUT')
     @else
-        <h1>Post a new question</h1>
+        <div class="form-banner">
+            <h1>Post a new question</h1>
 
-        <form action="/questions" method="post">
+            <form action="/questions" method="post">
     @endif
-
+        </div>
             @csrf
 
     <div class="form-group">
@@ -33,7 +35,7 @@
     </div>
 
     <div class="form-group">
-        <button>Save</button>
+        <button class="btn btn-success">Save</button>
     </div>
 
 </form>
