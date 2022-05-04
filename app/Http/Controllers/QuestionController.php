@@ -64,4 +64,32 @@ class QuestionController extends Controller
 
         return view('questions.form', compact('question'));
     }
+
+    public function update($question_id, Request $request)
+    {
+        $question = Question::findOrFail($question_id);
+
+        $this->validate($request, [
+            'title' => 'required',
+            'text'  => 'required',
+        ]);
+
+        $question->title = $request->input('title');
+        $question->text = $request->input('text');
+
+        $question->save();
+
+        session()->flash("success", "Successfully added");
+
+        return redirect()->action([QuestionController::class, 'show'], ['question_id' => $question->id]);      
+
+    }
+
+    public function destroy($question_id)
+    {
+        $question = Question::findOrFail($question_id);
+        $question->delete();
+
+        return redirect()->action('BookController@index');
+    }
 }

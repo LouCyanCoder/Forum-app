@@ -23,5 +23,15 @@ Route::controller(QuestionController::class)->group(function () {
     Route::get('/questions/create', 'create');
     Route::post('/questions', 'store');
     Route::get('/questions/{question_id}', 'show');
-    Route::put('/questions/{question_id}', 'edit');
+    Route::get('/questions/{question_id}/edit', 'edit');
+    Route::put('/questions/{question_id}', 'update');
+    Route::delete('/questions/{question_id}', 'destroy')->name('question-destroy');
 });
+
+// GET         /resource                       index   resource.index
+// GET         /resource/create                create  resource.create
+// POST        /resource                       store   resource.store
+// GET         /resource/{resource}            show    resource.show
+// GET         /resource/{resource}/edit       edit    resource.edit
+// PUT/PATCH   /resource/{resource}            update  resource.update
+// DELETE      /resource/{resource}            destroy resource.destroy

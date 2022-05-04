@@ -5,6 +5,19 @@
     <section id="banner">
         <div class="container">
             <h1>Question</h1>
+            
+            <div class="banner-control">
+                
+                <a href="/questions/{{ $question->id }}/edit">
+                    <button class="btn btn-success">Edit this question</button>
+                </a>
+                
+                <a href="{{ route('question-destroy', [$question->id]) }}">
+                    <button class="btn btn-danger">Delete this question</button>
+                    @method('destroy')
+                </a>
+                
+            </div>
         </div>
     </section>
 

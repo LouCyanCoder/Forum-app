@@ -6,9 +6,11 @@
     <div class="container">
         <h1>Questions</h1>
 
-        <a href="/questions/create">
-            <button class="btn btn-success">Post a new question</button>
-        </a>
+        <div class="banner-control">
+            <a href="/questions/create">
+                <button class="btn btn-success">Post a new question</button>
+            </a>
+        </div>
         
     </div>
 </section>
